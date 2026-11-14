@@ -1,6 +1,9 @@
-# mv ~Downloads/sales.csv ~/Documents/ism2411-lab12/data 
-
-
+# Reflection questions 
+# 1. This feels like it is quicker and less boring that clicking dragging and computing it yourself as if
+# you were doing it in excel. Excel is better for quick data entering and seeing things in a table while python is 
+# better for large scale calculation with cleaning and transforming data. 
+# 2. An append mode log file would be helpful for things like order processing times, seeing when employees are clocking 
+# in or out. It can also log when every bank transaction has happened as well, like deposits or withdrawals. 
 
 import csv 
 from datetime import datetime
