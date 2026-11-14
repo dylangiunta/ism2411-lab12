@@ -38,7 +38,7 @@ with open(SALES_FILE, "r") as f:
     reader = csv.reader(f)
     next(reader)
     for row in reader:
-        product, price_str, qty_str, total_str = row 
+        product, price_str, qty_str, = row 
         price = float(price_str)
         quantity = int(qty_str)
         total = price * quantity 
@@ -58,7 +58,7 @@ with open(SALES_FILE, "r") as f:
     next(reader)
     for row in reader: 
         rows_read += 1 
-        product, price_str, qty_str, total_str = row 
+        product, price_str, qty_str, = row 
         price = float(price_str)
         quantity = int(qty_str)
         total = price * quantity
@@ -79,11 +79,11 @@ dict_total = 0
 with open(SALES_FILE, "r") as f:
     reader = csv.DictReader(f)
     for row in reader:
-        price = float(row["Price"])
-        quantity = int(row["Quantity"])
+        price = float(row["price"])
+        quantity = int(row["quantity"])
         total = price * quantity 
         dict_total += total 
-        print(f"{row['Product']}: {quantity} units x ${price:.2f} = ${total:.2f}")
+        print(f"{row['product']}: {quantity} units x ${price:.2f} = ${total:.2f}")
 
 print(f"Total revenue: ${dict_total:.2f}")
 
@@ -94,8 +94,8 @@ summary = {}
 with open(SALES_FILE, "r") as f:
     reader = csv.DictReader(f)
     for row in reader:
-        product = row["Product"]
-        total = float(row["Price"]) * int(row["Quantity"])
+        product = row["product"]
+        total = float(row["price"]) * int(row["quantity"])
         summary[product] = summary.get(product, 0) + total
 for product in sorted(summary):
     print(f"{product}: ${summary[product]:.2f}")
